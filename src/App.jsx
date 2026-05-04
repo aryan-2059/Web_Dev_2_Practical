@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 function App() {
-  const [data, setData]=useState();
+  const [data, setData]=useState([]);
   const [currentPg, setCurrentPg] = useState(1)
 
   const itemsPerPage = 4;
@@ -28,7 +28,7 @@ function App() {
     <>
       <h1>Product Images</h1>
       {
-        data?.slice(startIdx, endIdx).map((item) => {
+        data.slice(startIdx, endIdx).map((item) => {
           return (
             <div key={item.id}>
               <img src={item.thumbnail} alt={item.title} />
